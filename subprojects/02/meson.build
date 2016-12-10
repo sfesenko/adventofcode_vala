@@ -1,7 +1,7 @@
 project('Day 2: Bathroom Security', 'c', 'vala')
 
 src = [
-    'Second.vala'
+    'Second.vala',
 ]
 
 glib = dependency('glib-2.0')
