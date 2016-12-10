@@ -4,10 +4,11 @@ src = [
     'first.vala'
 ]
 
-glib = dependency('glib-2.0')
-gobject = dependency('gobject-2.0')
-
-all_deps = [ glib, gobject ]
+all_deps = [
+    dependency('glib-2.0'),
+    dependency('gobject-2.0'),
+     dependency('gee-0.8'),
+]
 
 exe = executable(
     'first',

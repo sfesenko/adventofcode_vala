@@ -2,6 +2,8 @@
  *
  */
 
+using Gee;
+
 [Compact]
 enum Direction {
 
@@ -30,28 +32,47 @@ class Spot {
 
     public Direction d = Direction.UP;
 
+    public Set<string> history = new HashSet<string>();
+
     public Spot() {
         this.x = 0;
         this.y = 0;
+        track_history();
     }
 
     public string to_string() {
         return @"x = $x, y = $y";
     }
 
+    void track_history() {
+        string state = to_string();
+        if( state in this.history ) {
+            message("Was here!: (%s), distance: %d", state, distance_from_start());
+        } else {
+            this.history.add(state);
+        }
+    }
+
     void move(int length) {
+        for(int i = 0; i < length; ++i) {
+            one_step_move();
+            track_history();
+        }
+    }
+
+    void one_step_move() {
         switch(d) {
             case Direction.UP:
-                y += length;
+                ++y;
                 break;
             case Direction.RIGHT:
-                x += length;
+                ++x;
                 break;
             case Direction.DOWN:
-                y -= length;
+                --y;
                 break;
             case Direction.LEFT:
-                x -= length;
+                --x;
                 break;
             default:
                 break;
