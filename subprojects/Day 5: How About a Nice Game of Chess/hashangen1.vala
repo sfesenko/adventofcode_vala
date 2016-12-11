@@ -1,10 +1,6 @@
 
 namespace day5 {
 
-string md5(string s) {
-    return Checksum.compute_for_string (ChecksumType.MD5, s, s.length);
-}
-
 string calculate_hash(string k) {
     int i = 0;
     var pwd = new StringBuilder();
@@ -18,11 +14,11 @@ string calculate_hash(string k) {
     }
     return pwd.str;
 }
-
 void main(string[] argv) {
     assert( md5("abc3231929") == "00000155f8105dff7f56ee10fa9b9abd" );
     string hash = calculate_hash("reyedfim");
-    message(hash);
+    stdout.puts(@"\nCode: $hash\n");
 }
 
 }
+
