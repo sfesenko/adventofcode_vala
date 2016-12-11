@@ -1,0 +1,5 @@
+
+namespace day6 {
+
+
+}
