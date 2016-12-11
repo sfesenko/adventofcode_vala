@@ -25,6 +25,26 @@ string get_hash(string s) {
     return (string) pq.slice(0, 5).to_array();
 }
 
+string decrypt_name(string n, int selector) {
+    char[] name = n.to_utf8();
+    for(int i = 0; i < selector; ++i) {
+        for(int j = 0; j < name.length; ++j) {
+            char ch = name[j];
+            if(!ch.isalpha()) {
+                continue;
+            }
+            if(ch == 'z') {
+                ch = 'a';
+            } else {
+                ++ch;
+            }
+            name[j] = ch;
+        }
+    }
+    string result = ((string) name).replace("-", " ");
+    return result;
+}
+
 int get_sector(string s) {
     int nameEnd = s.last_index_of_char('-');
     string name = s.substring(0, nameEnd);
@@ -36,8 +56,14 @@ int get_sector(string s) {
     if(original_hash == calculated_hash) {
         string sector = s.slice(nameEnd + 1, hash_start);
         sector_value = int.parse(sector);
+        string decoded = decrypt_name(name, sector_value);
+        string msg = @"> $sector_value == $decoded";
+        if( "northpole" in decoded ) {
+            message(msg);
+        }
+        //message(@"name = $name, original_hash = $original_hash, hash = $calculated_hash, value = $sector_value");
+        stdout.puts(msg + "\n");
     }
-    message(@"name = $name, original_hash = $original_hash, hash = $calculated_hash, value = $sector_value");
     return sector_value;
 }
 
