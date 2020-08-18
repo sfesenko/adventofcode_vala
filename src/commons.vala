@@ -20,7 +20,6 @@ namespace advent2015 {
     inline uint min (uint a, uint b, uint c) {
         return uint.min( uint.min (a, b), c );
     }
-
 }
 
 

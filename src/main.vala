@@ -25,13 +25,12 @@ void run (Day day, string data) {
     message (@"Result2: $result2");
 }
 
-
 void main (string[] args)
 {
-    var nn = "/home/sfesenko/Projects/AdventOfCode2015/input/day2.txt";
+    var nn = "/home/sfesenko/Projects/AdventOfCode2015/input/day3.txt";
     var input = read_file (nn);
 
-    var day = new Day2 ();
+    var day = new Day3 ();
 
     run (day, input);
 

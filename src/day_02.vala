@@ -12,9 +12,11 @@ class Day2 : Day {
                 continue;
             }
             var (a, b, c) = line.split ("x");
-            var l = uint.parse (a), w = uint.parse (b), h = uint.parse (c);
-            var el = f (l, w, h);
-            total += el;
+            var l = uint.parse (a),
+                w = uint.parse (b),
+                h = uint.parse (c);
+
+            total += f (l, w, h);
         }
         uint result = (uint) total;
         assert (result == total);
