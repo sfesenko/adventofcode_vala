@@ -1,6 +1,7 @@
 adventofcode2015_sources = [
   'commons.vala',
   'day_01.vala',
+  'day_02.vala',
   'main.vala',
 
 ]

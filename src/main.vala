@@ -17,13 +17,22 @@
  */
 using advent2015;
 
-int main (string[] args)
+
+void run (Day day, string data) {
+    var result1 = day.first (data);
+    message (@"Result1: $result1");
+    var result2 = day.second (data);
+    message (@"Result2: $result2");
+}
+
+
+void main (string[] args)
 {
-    var nn = "/home/sfesenko/Projects/AdventOfCode2015/input/day1.txt";
+    var nn = "/home/sfesenko/Projects/AdventOfCode2015/input/day2.txt";
     var input = read_file (nn);
 
-    var result = day_12 (input);
-    message (@"size == $(result)");
+    var day = new Day2 ();
 
-	return 0;
+    run (day, input);
+
 }
