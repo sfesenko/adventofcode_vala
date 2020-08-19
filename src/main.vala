@@ -27,10 +27,12 @@ void run (Day day, string data) {
 
 void main (string[] args)
 {
-    var nn = "/home/sfesenko/Projects/AdventOfCode2015/input/day6.txt";
+    var nn = "/home/sfesenko/Projects/AdventOfCode2015/input/day7.txt";
     var input = read_file (nn);
 
-    var day = new Day6 ();
+    var day = new Day7 ();
 
     run (day, input);
+
 }
+
