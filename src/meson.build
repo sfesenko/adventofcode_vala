@@ -5,6 +5,7 @@ adventofcode2015_sources = [
   'day_03.vala',
   'day_04.vala',
   'day_05.vala',
+  'day_06.vala',
 
   'day_x.vala',
   'main.vala',

@@ -27,7 +27,6 @@ class Day5 : Day {
                 if (c in w) {
                     wovels += 1;
                 }
-
                 if (c == prev) {
                     doubles += 1;
                 }
@@ -45,7 +44,7 @@ class Day5 : Day {
     uint second (string data) {
 
         StringPredicate niceness = (s) => {
-            var pairs = new GenericSet<string> ((s) => s.hash(), (a, b) => a == b);
+            var pairs = new GenericSet<string> (str_hash, str_equal);
             var doubles = 0;
             var aba = 0;
             char a = '_';

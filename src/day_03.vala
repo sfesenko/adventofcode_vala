@@ -3,7 +3,7 @@ using advent2015;
 class Day3 : Day {
 
     uint first (string data) {
-        var places = new GenericSet<string> ((s) => s.hash(), (a, b) => a == b);
+        var places = new GenericSet<string> (str_hash, str_equal);
         int x = 0, y = 0;
         places.add (@"$x-$y");
 

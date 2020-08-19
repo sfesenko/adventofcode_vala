@@ -12,7 +12,6 @@ namespace advent2015 {
         return content;
     }
 
-
     inline uint max (uint a, uint b, uint c) {
         return uint.max (a, uint.max (b, c) );
     }
@@ -24,10 +23,7 @@ namespace advent2015 {
     delegate bool StringPredicate (string val);
 }
 
-
-
 public interface advent2015.Day {
     public abstract uint first (string data);
     public abstract uint second (string data);
 }
-
