@@ -3,11 +3,13 @@ using advent2015;
 class DayX : Day {
 
     uint first (string data) {
-        return 0;
+        var lines = data.split ("\n");
+        return lines.length;
     }
 
     uint second (string data) {
-        return 0;
+        var lines = data.split ("\n");
+        return lines.length;
     }
 }
 

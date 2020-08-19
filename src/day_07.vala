@@ -16,8 +16,9 @@ class Day7 : Day {
         return false;
     }
 
-    bool evaluate (HashTable<string, ushort> wires, string instruction, out ushort result) {
+    bool evaluate (HashTable<string, ushort> wires, string instruction, out string wire_name, out ushort result) {
         var tokens = instruction.split (" ");
+        wire_name = tokens [tokens.length - 1];
         if (tokens[1] == "->") {
             ushort a;
             if (get_value (wires, tokens[0], out a)) {
@@ -75,9 +76,8 @@ class Day7 : Day {
             var size = instructions.length;
             foreach (var inst in instructions.get_values ()) {
                 ushort w;
-                if(evaluate (wires, inst, out w)) {
-                    var i = inst.last_index_of_char (' ');
-                    var wire = inst.substring (i + 1);
+                string wire;
+                if(evaluate (wires, inst, out wire, out w)) {
                     wires.@set (wire, w);
                     instructions.remove (inst);
                 }
