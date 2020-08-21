@@ -63,19 +63,17 @@ class Day11 : Day {
 
     }
 
-    uint first (string data) {
+    string first (string data) {
         var pwd_array = next_pwd (data.reverse().to_utf8 ());
         var pwd = to_string (pwd_array);
-        message (@"next: $pwd");
-        return 0;
+        return pwd;
     }
 
-    uint second (string data) {
+    string second (string data) {
         var pwd_array = next_pwd (data.reverse().to_utf8 ());
         pwd_array = increment (pwd_array);
         pwd_array = next_pwd (pwd_array);
         var pwd = to_string (pwd_array);
-        message (@"next: $pwd");
-        return 0;
+        return pwd;
     }
 }

@@ -2,7 +2,7 @@ using advent2015;
 
 class Day1 : Day {
 
-    public uint first (string data) {
+    uint first_u (string data) {
         var count = 0;
         foreach ( var c in data.to_utf8() ) {
             switch (c) {
@@ -17,7 +17,7 @@ class Day1 : Day {
         return count;
     }
 
-    public uint second (string data) {
+    uint second_u (string data) {
         var chars = data.to_utf8 ();
         var count = 0;
         for (var i = 0; i < chars.length; ++i) {

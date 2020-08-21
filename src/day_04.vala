@@ -19,12 +19,12 @@ class Day4 : Day {
         return 0;
     }
 
-    uint first (string data) {
+    uint first_u (string data) {
         is_coin_predicate easy_coin = (h) => h.has_prefix ("00000");
         return find_coin (data, easy_coin);
     }
 
-    uint second (string data) {
+    uint second_u (string data) {
         is_coin_predicate is_coin = (h) => h.has_prefix ("000000");
         return find_coin (data, is_coin);
     }

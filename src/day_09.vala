@@ -63,7 +63,7 @@ class Day9 : Day {
         return select_result (results);
     }
 
-    uint first (string data) {
+    uint first_u (string data) {
         populate_tables (data);
         var v = min_distance ((a) => {
             uint r = uint.MAX;
@@ -77,7 +77,7 @@ class Day9 : Day {
         return v;
     }
 
-    uint second (string data) {
+    uint second_u (string data) {
         var v = min_distance ((a) => {
             uint r = uint.MIN;
             foreach (var n in a) {

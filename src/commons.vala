@@ -25,6 +25,16 @@ namespace advent2015 {
 }
 
 public interface advent2015.Day {
-    public abstract uint first (string data);
-    public abstract uint second (string data);
+    protected virtual uint first_u (string data) {
+        return 0;
+    }
+    protected virtual uint second_u (string data) {
+        return 0;
+    }
+    public virtual string first (string input) {
+        return first_u (input).to_string ();
+    }
+    public virtual string second (string input) {
+        return second_u (input).to_string ();
+    }
 }

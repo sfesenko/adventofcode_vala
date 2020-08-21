@@ -15,7 +15,7 @@ class Day5 : Day {
         return count;
     }
 
-    uint first (string data) {
+    uint first_u (string data) {
         string[] bl = { "ab", "cd", "pq", "xy" };
         char[] w = "aeiou".to_utf8 ();
 
@@ -41,7 +41,7 @@ class Day5 : Day {
         return count_niceness (data, is_nice);
     }
 
-    uint second (string data) {
+    uint second_u (string data) {
 
         Predicate<string> niceness = (s) => {
             var pairs = new GenericSet<string> (str_hash, str_equal);

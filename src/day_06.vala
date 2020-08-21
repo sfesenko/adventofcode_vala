@@ -2,6 +2,7 @@ using advent2015;
 
 class Day6 : Day {
 
+    // return { xy, y1, x2, y2 };
     uint[] parse (string line, string prefix) {
         var e1 = line.index_of_char (' ', prefix.length + 1);
         var (x1, y1) = line.slice (prefix.length + 1, e1).split (",");
@@ -11,7 +12,7 @@ class Day6 : Day {
         return { uint.parse (x1), uint.parse (y1), uint.parse (x2), uint.parse (y2) };
     }
 
-    uint first (string data) {
+    uint first_u (string data) {
         bool[,] screen = new bool [1000,1000];
         foreach (var line in data.split ("\n")) {
             if (line.length == 0) {
@@ -48,7 +49,7 @@ class Day6 : Day {
         return count;
     }
 
-    uint second (string data) {
+    uint second_u (string data) {
         var table = new uchar [1000, 1000];
         string[] instrunctions = { "turn on", "turn off", "toggle" };
         foreach (var line in data.split ("\n")) {

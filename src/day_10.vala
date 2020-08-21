@@ -33,11 +33,11 @@ class Day10 : Day {
 
     }
 
-    uint first (string data) {
+    uint first_u (string data) {
         return run_loop (data, 40);
     }
 
-    uint second (string data) {
+    uint second_u (string data) {
         return run_loop (data, 50);
     }
 }

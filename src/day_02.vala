@@ -24,7 +24,7 @@ class Day2 : Day {
 
     }
 
-    uint first (string data) {
+    uint first_u (string data) {
         formula wrapping = (l, w, h) => {
             var lw = l*w, wh = w*h, hl = h*l;
             var sq = (lw + wh + hl) * 2 + min (lw, wh, hl);
@@ -33,7 +33,7 @@ class Day2 : Day {
         return process_file (data, wrapping);
     }
 
-    uint second (string data) {
+    uint second_u (string data) {
         formula ribbon = (l, w, h) => {
             uint a, b;
             var mx = max (l, w, h);

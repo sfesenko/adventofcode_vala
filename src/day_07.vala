@@ -64,7 +64,7 @@ class Day7 : Day {
         return false;
     }
 
-    uint first (string data) {
+    uint first_u (string data) {
         var instructions = new GenericSet<string> (str_hash, str_equal);
         foreach (var l in data.split ("\n")) {
             if (l.length > 0) {
@@ -96,8 +96,8 @@ class Day7 : Day {
         return wires ["a"];
     }
 
-    uint second (string data) {
-        var a = first (data);
+    uint second_u (string data) {
+        var a = first_u (data);
         var ln = data.split ("\n");
         for (var i = 0; i < ln.length; ++i) {
             if (ln[i].has_suffix ("-> b")) {
@@ -106,7 +106,7 @@ class Day7 : Day {
             }
         }
         var data2 = string.joinv ("\n", ln);
-        return first (data2);
+        return first_u (data2);
     }
 }
 

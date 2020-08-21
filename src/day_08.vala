@@ -44,7 +44,7 @@ class Day8 : Day {
         return count;
     }
 
-    uint first (string data) {
+    uint first_u (string data) {
         return count_length (data, char_length);
     }
 
@@ -59,7 +59,7 @@ class Day8 : Day {
         return count + 2;
     }
 
-    uint second (string data) {
+    uint second_u (string data) {
         return count_length (data, char_length2);
     }
 }
