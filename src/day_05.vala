@@ -2,7 +2,7 @@ using advent2015;
 
 class Day5 : Day {
 
-    uint count_niceness (string data, StringPredicate is_nice) {
+    uint count_niceness (string data, Predicate is_nice) {
         uint count = 0;
         foreach (var line in data.split ("\n")) {
             if (line.length == 0) {
@@ -19,7 +19,7 @@ class Day5 : Day {
         string[] bl = { "ab", "cd", "pq", "xy" };
         char[] w = "aeiou".to_utf8 ();
 
-        StringPredicate is_nice = (s) => {
+        Predicate<string> is_nice = (s) => {
             uint wovels = 0;
             uint doubles = 0;
             var prev = '_';
@@ -43,7 +43,7 @@ class Day5 : Day {
 
     uint second (string data) {
 
-        StringPredicate niceness = (s) => {
+        Predicate<string> niceness = (s) => {
             var pairs = new GenericSet<string> (str_hash, str_equal);
             var doubles = 0;
             var aba = 0;

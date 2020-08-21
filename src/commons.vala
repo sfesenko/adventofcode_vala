@@ -20,7 +20,8 @@ namespace advent2015 {
         return uint.min( uint.min (a, b), c );
     }
 
-    delegate bool StringPredicate (string val);
+    delegate bool Predicate<T> (T val);
+    delegate T ReduceArray<T> (T[] array);
 }
 
 public interface advent2015.Day {
