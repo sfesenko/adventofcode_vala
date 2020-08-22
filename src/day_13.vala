@@ -4,8 +4,8 @@ class Day13 : Day {
 
     HashTable<uint, int> happiness = new HashTable<uint, int>((i) => i, (a, b) => a == b);
 
-    uint mk_idx (uint x, uint y) {
-        return y * 10 + x;
+    uint idx (uint x, uint y) {
+        return y * 16 + x;
     }
 
     uint populate_data (string data) {
@@ -35,37 +35,36 @@ class Day13 : Day {
             if (tokens [2] == "lose") {
                 joy = -joy;
             }
-            happiness [ mk_idx (n1, n2) ] = joy;
+            happiness [ idx (n1, n2) ] = joy;
             // debug (@" '$name1'~$n1 -> '$name2'~$n2 == $joy");
         }
         return name_index.length;
     }
 
     int calculate_joy (uint8[] pos) {
+        var len = pos.length;
         int result = 0;
-        for (var i = 0; i < pos.length; ++i) {
-            var left_i = (i == 0) ? pos.length - 1 : i - 1;
-            var right_i = (i + 1 == pos.length) ? 0 : i + 1;
+        for (var i = 0; i < len; ++i) {
             var c = pos [ i ];
-            var l = pos [ left_i ];
-            var r = pos [ right_i ];
-            result += happiness [mk_idx (c, l)] + happiness [ mk_idx (c, r)];
+            var l = pos [ (i + len - 1) % len ];
+            var r = pos [ (i + len + 1) % len ];
+            result += happiness [ idx (c, l) ] + happiness [ idx (c, r) ];
         }
         return result;
     }
 
-    int recursive_joy_1 (uint len, uint8[] positions, uint n = 0, uint mask = 0) {
-        if (n >= len) {
+    int recursive_joy_1 (uint length, uint8[] positions, uint n = 0, uint mask = 0) {
+        if (n >= length) {
             return calculate_joy (positions);
         }
         var max_joy = int.MIN;
-        for (var i = 0; i < len; ++i) {
+        for (var i = 0; i < length; ++i) {
             var mx = 1 << i;
             if ((mx & mask) > 0) {
                 continue;
             }
             positions [n] = i;
-            var joy = recursive_joy_1 (len, positions, n + 1, mask | mx);
+            var joy = recursive_joy_1 (length, positions, n + 1, mask | mx);
             max_joy = int.max (max_joy, joy);
         }
         return max_joy;
