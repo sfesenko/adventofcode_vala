@@ -11,6 +11,7 @@ adventofcode2015_sources = [
   'day_09.vala',
   'day_10.vala',
   'day_11.vala',
+  'day_12.vala',
 
   'day_x.vala',
   'main.vala',
@@ -21,6 +22,7 @@ adventofcode2015_deps = [
   dependency('glib-2.0'),
   dependency('gobject-2.0'),
   dependency('gio-2.0'),
+  dependency('json-glib-1.0')
 ]
 
 executable('adventofcode2015', adventofcode2015_sources,

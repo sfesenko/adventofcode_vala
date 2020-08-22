@@ -9,7 +9,7 @@ namespace advent2015 {
             warning (@"can't read file '$fname': $(ex.message)");
             content = "";
         }
-        return content;
+        return content.strip ();
     }
 
     inline uint max (uint a, uint b, uint c) {
