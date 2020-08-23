@@ -22,6 +22,7 @@ namespace advent2015 {
 
     delegate bool Predicate<T> (T val);
     delegate T ReduceArray<T> (T[] array);
+    delegate string RunFunc (string input);
 }
 
 public interface advent2015.Day {

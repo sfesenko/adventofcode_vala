@@ -17,11 +17,10 @@
  */
 using advent2015;
 
-
-void run (Day day, string data) {
-    var result1 = day.first (data);
+void run (RunFunc d1, RunFunc d2, string data) {
+    var result1 = d1 (data);
     message (@"Result1: $result1");
-    var result2 = day.second (data);
+    var result2 = d2 (data);
     message (@"Result2: $result2");
 }
 
@@ -30,8 +29,5 @@ void main (string[] args)
     var nn = "/home/sfesenko/Projects/AdventOfCode2015/input/day14.txt";
     var input = read_file (nn);
 
-    var day = new Day14 ();
-
-    run (day, input);
+    run (Day14.first, Day14.second, input);
 }
-
