@@ -1,6 +1,4 @@
-using advent2015;
-
-namespace Day14 {
+namespace advent2015.Day14 {
 
     string first (string data) {
         uint[] speed = {};

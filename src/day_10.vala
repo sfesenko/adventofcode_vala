@@ -27,7 +27,7 @@ class Day10 : Day {
         var s = data;
         for (var i = 0; i < count; ++i) {
             s = look_and_say (s);
-            debug ("%02d ~~ %d", i+1, s.length);
+            // debug ("%02d ~~ %d", i+1, s.length);
         }
         return s.length;
 

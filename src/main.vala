@@ -17,17 +17,76 @@
  */
 using advent2015;
 
+/*
 void run (RunFunc d1, RunFunc d2, string data) {
     var result1 = d1 (data);
     message (@"Result1: $result1");
     var result2 = d2 (data);
     message (@"Result2: $result2");
 }
+*/
+
+delegate string StringProvider ();
+void select_day (uint day_no, out StringProvider first, out StringProvider second) {
+    RunFunc d1, d2;
+    switch (day_no) {
+        case 8:
+            var day = new Day8 ();
+            d1 = day.first;
+            d2 = day.second;
+            break;
+        case 9:
+            var day = new Day9 ();
+            d1 = day.first;
+            d2 = day.second;
+            break;
+        case 10:
+            var day = new Day10 ();
+            d1 = day.first;
+            d2 = day.second;
+            break;
+        case 11:
+            var day = new Day11 ();
+            d1 = day.first;
+            d2 = day.second;
+            break;
+        case 12:
+            var day = new Day12 ();
+            d1 = day.first;
+            d2 = day.second;
+            break;
+        case 13:
+            var day = new Day13 ();
+            d1 = day.first;
+            d2 = day.second;
+            break;
+        case 14:
+            d1 = Day14.first;
+            d2 = Day14.second;
+            break;
+        case 15:
+            var day = new Day15 ();
+            d1 = day.first;
+            d2 = day.second;
+            break;
+        default:
+            d1 = (_) => "not implemented ;-(";
+            d2 = (_) => "not implemented ;-(";
+            break;
+    }
+    var base_path = "/home/sfesenko/Projects/AdventOfCode2015/input/";
+    var file_name = (false) ? "test.txt" : @"day$(day_no).txt";
+    var input_file = base_path + file_name;
+    var input = read_file (input_file);
+    first = () => d1 (input);
+    second = () => d2 (input);
+}
 
 void main (string[] args)
 {
-    var nn = "/home/sfesenko/Projects/AdventOfCode2015/input/day14.txt";
-    var input = read_file (nn);
+    StringProvider d1, d2;
+    select_day (15, out d1, out d2);
 
-    run (Day14.first, Day14.second, input);
+    message (@"Result1: $(d1 ())");
+    message (@"Result2: $(d2 ())");
 }
