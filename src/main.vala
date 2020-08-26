@@ -69,6 +69,11 @@ void select_day (uint day_no, out StringProvider first, out StringProvider secon
             d1 = day.first;
             d2 = day.second;
             break;
+        case 16:
+            var day = new Day16();
+            d1 = day.first;
+            d2 = day.second;
+            break;
         default:
             d1 = (_) => "not implemented ;-(";
             d2 = (_) => "not implemented ;-(";
@@ -85,7 +90,7 @@ void select_day (uint day_no, out StringProvider first, out StringProvider secon
 void main (string[] args)
 {
     StringProvider d1, d2;
-    select_day (15, out d1, out d2);
+    select_day (16, out d1, out d2);
 
     message (@"Result1: $(d1 ())");
     message (@"Result2: $(d2 ())");

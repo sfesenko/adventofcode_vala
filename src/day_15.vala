@@ -1,6 +1,6 @@
 using advent2015;
 
-class Day15 : Day {
+class Day15 {
 
     [Compact]
     class Ingredient {
@@ -67,14 +67,14 @@ class Day15 : Day {
         return result;
     }
 
-    string first (string data) {
+    public string first (string data) {
         var ingredients = parse_ingredients (data);
         ScoreCalc score_func = (spoons) => calculate_score (spoons, ingredients, 0);
         var result = recursive (100, new int[ingredients.length], 0, score_func);
         return result.to_string ();
     }
 
-    string second (string data) {
+    public string second (string data) {
         var ingredients = parse_ingredients (data);
         ScoreCalc score_func = (spoons) => calculate_score (spoons, ingredients, 500);
         var result = recursive (100, new int[ingredients.length], 0, score_func);
