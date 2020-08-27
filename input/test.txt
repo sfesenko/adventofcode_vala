@@ -1,2 +1,10 @@
-Butterscotch: capacity -1, durability -2, flavor 6, texture 3, calories 1
-Cinnamon: capacity 2, durability 3, flavor -2, texture -1, calories 1
+1
+2
+3
+4
+5
+6
+7
+20
+40
+20
