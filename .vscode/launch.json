@@ -8,7 +8,7 @@
             "type": "lldb",
             "request": "launch",
             "name": "Debug",
-            "program": "${workspaceFolder}/<your program>",
+            "program": "${workspaceFolder}/builddir/src/adventofcode2015",
             "args": [],
             "cwd": "${workspaceFolder}"
         }
