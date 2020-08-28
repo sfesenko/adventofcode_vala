@@ -89,9 +89,15 @@ void select_day (uint day_no, out StringProvider first, out StringProvider secon
             d1 = day.first;
             d2 = day.second;
             break;
+        case 20:
+            var day = new Day20 ();
+            d1 = day.first;
+            d2 = day.second;
+            break;
         default:
-            d1 = (_) => "not implemented ;-(";
-            d2 = (_) => "not implemented ;-(";
+            var not_implemented = "not implemented ;-(";
+            d1 = (_) => not_implemented;
+            d2 = (_) => not_implemented;
             break;
     }
     var base_path = "/home/sfesenko/Projects/AdventOfCode2015/input/";
@@ -105,7 +111,7 @@ void select_day (uint day_no, out StringProvider first, out StringProvider secon
 void main (string[] args)
 {
     StringProvider d1, d2;
-    select_day (19, out d1, out d2);
+    select_day (20, out d1, out d2);
 
     message (@"Result1: $(d1 ())");
     message (@"Result2: $(d2 ())");
