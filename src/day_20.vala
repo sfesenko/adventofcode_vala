@@ -15,7 +15,6 @@ class Day20 : Day {
         return result;
     }
 
-
     uint first_u (string data) {
         var n = int.parse (data);
         var house = new uint [n / 10];
@@ -35,7 +34,7 @@ class Day20 : Day {
         var house = new uint [house_count];
         for (var elf_idx = 1; elf_idx < house_count; ++elf_idx) {
             var count = 0;
-            for (var house_idx = elf_idx; house_idx < house_count; house_idx += el_idx) {
+            for (var house_idx = elf_idx; house_idx < house_count; house_idx += elf_idx) {
                 if (count++ > 50) {
                     break;
                 }
