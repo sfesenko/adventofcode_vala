@@ -1,4 +1,4 @@
-project('Day 1: No Time for a Taxicab', 'c', 'vala')
+project('Day_1_No_Time_for_a_Taxicab', 'c', 'vala')
 
 src = [
     'first.vala'
